@@ -96,7 +96,14 @@ def cmd_clone(args: argparse.Namespace) -> int:
         print("Use either a project ID or --all, not both.", file=sys.stderr)
         return 2
     if args.all:
-        selected = PROJECTS
+        destination = Path(args.destination)
+        selected = [
+            project for project in PROJECTS
+            if (project_dir(project["id"], destination) / ".git").is_dir()
+        ]
+        if not selected:
+            print("No cloned repositories to update.")
+            return 0
     elif args.project in PROJECT_BY_ID:
         selected = [PROJECT_BY_ID[args.project]]
     elif args.project:
