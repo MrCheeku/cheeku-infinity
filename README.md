@@ -1,134 +1,169 @@
 <div align="center">
 
-# ∞ CHEEKU INFINITY
+<img src="assets/cheeku-infinity-banner.svg" alt="CHEEKU INFINITY — Beyond Tools. Beyond Limits." width="100%">
 
-### Beyond Tools. Beyond Limits.
+<br>
 
-**One curated collection. Sixteen powerful open-source projects.**
+**A curated collection of AI skills, developer tools, infrastructure and creative applications.**
 
-[![CI](https://github.com/MrCheeku/cheeku-infinity/actions/workflows/ci.yml/badge.svg)](https://github.com/MrCheeku/cheeku-infinity/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/MrCheeku/cheeku-infinity/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white)](https://github.com/MrCheeku/cheeku-infinity/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-2ea44f.svg)](LICENSE)
-[![Projects](https://img.shields.io/badge/Projects-16-7656D6)](catalog.json)
-[![Engineered by](https://img.shields.io/badge/Engineered%20by-Mr.Cheeku-111827)](https://github.com/MrCheeku)
+[![Stars](https://img.shields.io/github/stars/MrCheeku/cheeku-infinity?style=flat&logo=github)](https://github.com/MrCheeku/cheeku-infinity/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/MrCheeku/cheeku-infinity?logo=git)](https://github.com/MrCheeku/cheeku-infinity/commits/main)
+[![Issues](https://img.shields.io/github/issues/MrCheeku/cheeku-infinity)](https://github.com/MrCheeku/cheeku-infinity/issues)
 
 **Discover · Fetch · Inspect · Update**
+
+[Quick Start](#-quick-start) · [Collection](#-the-collection) · [Commands](#-command-reference) · [Roadmap](#-roadmap) · [Contributing](#-contributing)
+
+**Engineered by [Mr.Cheeku](https://github.com/MrCheeku)**
 
 </div>
 
 ---
 
-## About
+## ✨ What is CHEEKU INFINITY?
 
-**CHEEKU INFINITY** is an open-source collection and command-line source manager created under the **Mr.Cheeku** brand. It brings 16 independently maintained projects into one organized catalogue, covering AI, software engineering, cybersecurity, research, design, infrastructure, productivity and media.
+**CHEEKU INFINITY** is an open-source collection and command-line source manager that brings 16 independently maintained projects into one organized catalogue.
 
-Use one CLI to discover projects, inspect what they do, download their source code, check local status and update your local copies.
+It covers AI and machine learning, coding-agent skills, software engineering, cybersecurity, web research, UI/UX design, DevOps, productivity and media creation.
 
-> **The idea:** One organized entry point to a world of useful developer tools and AI capabilities.
+Instead of keeping track of many separate repositories manually, CHEEKU INFINITY gives you one place to:
 
-### Why use it?
+- **Discover** projects by category, type or name.
+- **Inspect** what a project does and where its original source lives.
+- **Fetch** a selected repository—or the complete collection—on demand.
+- **Update** local checkouts without force-overwriting local changes.
+- **Track** which projects are downloaded and whether their working trees are modified.
+- **Audit** for common license and notice files before reviewing reuse requirements.
 
-- **One catalogue:** Browse all 16 projects from one place.
-- **Simple discovery:** Filter projects by type or engineering domain.
-- **On-demand downloads:** Clone only the projects you need.
-- **Source-aware updates:** Pull changes from original upstream repositories.
-- **Local visibility:** See what is downloaded and whether your copy has local changes.
-- **License awareness:** Locate common license and notice files before reuse.
-- **Open development:** Automated tests, CI and contribution guidance.
+> **The idea:** One organized entry point to a universe of useful open-source tools.
 
-## The collection
+## 🚀 Highlights
 
-| Type | Count | Meaning |
-|---|---:|---|
-| Agent skills, plugins and playbooks | 7 | Extend compatible AI-agent environments |
-| Developer tools, frameworks and services | 6 | Provide reusable software capabilities |
-| Applications | 3 | User-facing software projects |
-| **Total** | **16** | **Across 8 engineering domains** |
-
-### AI & Machine Learning
-
-| Project | What it brings |
+| Capability | Description |
 |---|---|
-| [MiniMind](https://github.com/jingyaogong/minimind) | Learn and experiment with small language-model training |
-| [OpenVINO](https://github.com/openvinotoolkit/openvino) | Optimize and deploy AI inference on supported hardware |
+| 16-project catalogue | A curated index of the repositories selected for CHEEKU INFINITY |
+| Three project types | Skills, developer tools and end-user applications clearly separated |
+| CLI interface | Simple commands to browse and manage the collection |
+| On-demand cloning | Download only what you need, or fetch all projects |
+| Safe updates | Fast-forward-only updates; no forced overwrite of local work |
+| Local status | See cloned repositories, active branches and uncommitted changes |
+| License awareness | Find common license and notice filenames for manual review |
+| No runtime dependencies | The CLI uses Python's standard library; Git is required for source operations |
 
-### Software Engineering & AI Coding
+## 🧭 Table of Contents
 
-| Project | What it brings |
-|---|---|
-| [Superpowers](https://github.com/obra/superpowers) | Planning, TDD, debugging and software-development agent workflows |
-| [CLI-Anything](https://github.com/HKUDS/CLI-Anything) | Create command-line interfaces for agent-controllable software |
-| [Cursor Plugins](https://github.com/cursor/plugins) | Extend the Cursor coding-agent environment with plugins |
+- [The Collection](#-the-collection)
+- [How It Works](#-how-it-works)
+- [Quick Start](#-quick-start)
+- [Command Reference](#-command-reference)
+- [Examples](#-examples)
+- [Current Scope](#-current-scope)
+- [Project Structure](#-project-structure)
+- [Development](#-development)
+- [Roadmap](#-roadmap)
+- [License & Third-Party Projects](#-license--third-party-projects)
+- [Security](#-security)
+- [Contributing](#-contributing)
 
-### Cybersecurity & Compliance
+## 🧰 The Collection
 
-| Project | What it brings |
-|---|---|
-| [Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) | Security-focused agent skills for authorized vulnerability assessment |
-| [App Store Compliance](https://github.com/mjmirza/app-store-compliance) | App-store compliance guidance and checks |
+CHEEKU INFINITY currently indexes **16 upstream repositories** across eight engineering domains.
 
-### Research & Web Intelligence
+### 🤖 AI & Machine Learning
 
-| Project | What it brings |
-|---|---|
-| [Firecrawl](https://github.com/firecrawl/firecrawl) | Crawl, scrape, search and extract website content |
-| [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) | Research recent online discussions and trends |
+| Project | Type | Purpose |
+|---|---|---|
+| [MiniMind](https://github.com/jingyaogong/minimind) | Tool / codebase | Learn and experiment with small language-model training |
+| [OpenVINO](https://github.com/openvinotoolkit/openvino) | AI toolkit | Optimize and deploy inference on supported hardware |
 
-### Design & Documentation
+### 💻 Software Engineering & AI Coding
 
-| Project | What it brings |
-|---|---|
-| [Diagram Design](https://github.com/cathrynlavery/diagram-design) | Agent guidance for technical and visual diagrams |
-| [Stitch Skills](https://github.com/google-labs-code/stitch-skills) | UI/UX design workflows using Google Stitch |
+| Project | Type | Purpose |
+|---|---|---|
+| [Superpowers](https://github.com/obra/superpowers) | Agent skills | Planning, TDD, debugging and software-development agent workflows |
+| [CLI-Anything](https://github.com/HKUDS/CLI-Anything) | Framework / tools | Create command-line interfaces for agent-controllable software |
+| [Cursor Plugins](https://github.com/cursor/plugins) | Plugin collection | Extend the Cursor coding-agent environment |
 
-### DevOps & Infrastructure
+### 🛡️ Cybersecurity & Compliance
 
-| Project | What it brings |
-|---|---|
-| [NGINX](https://github.com/nginx/nginx) | Web serving, reverse proxying and traffic distribution |
-| [OpenSRE](https://github.com/Tracer-Cloud/opensre) | AI-assisted CI/CD and reliability troubleshooting |
+| Project | Type | Purpose |
+|---|---|---|
+| [Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter) | Agent skill bundle | Security workflows for authorized vulnerability assessment |
+| [App Store Compliance](https://github.com/mjmirza/app-store-compliance) | Playbook / checks | App-store compliance guidance and pre-submission checks |
 
-### Productivity
+### 🔎 Research & Web Intelligence
 
-| Project | What it brings |
-|---|---|
-| [AFFiNE](https://github.com/toeverything/AFFiNE) | Documents, notes and visual knowledge workspace |
-| [Ghost Downloader 3](https://github.com/XiaoYouChR/Ghost-Downloader-3) | Desktop download management |
+| Project | Type | Purpose |
+|---|---|---|
+| [Firecrawl](https://github.com/firecrawl/firecrawl) | Tool / service | Crawl, scrape, search and extract website content |
+| [Last30Days Skill](https://github.com/mvanhorn/last30days-skill) | Agent skill | Research recent online discussions and trends |
 
-### Media & Video
+### 🎨 Design & Documentation
 
-| Project | What it brings |
-|---|---|
-| [AutoClip](https://github.com/zhouxiaoka/autoclip) | AI-assisted long-to-short video clipping |
+| Project | Type | Purpose |
+|---|---|---|
+| [Diagram Design](https://github.com/cathrynlavery/diagram-design) | Agent skill | Guidance for technical and visual diagrams |
+| [Stitch Skills](https://github.com/google-labs-code/stitch-skills) | Agent skills | UI/UX design workflows using Google Stitch |
 
-See the [detailed catalogue](docs/CATALOG.md) and [project type guide](docs/PROJECT-TYPES.md).
+### ⚙️ DevOps & Infrastructure
 
----
+| Project | Type | Purpose |
+|---|---|---|
+| [NGINX](https://github.com/nginx/nginx) | Server software | Web serving, reverse proxying and traffic distribution |
+| [OpenSRE](https://github.com/Tracer-Cloud/opensre) | CLI agent / tool | AI-assisted CI/CD and reliability troubleshooting |
 
-## How it works
+### 🗂️ Productivity
 
-CHEEKU INFINITY keeps its own management code separate from the 16 upstream projects.
+| Project | Type | Purpose |
+|---|---|---|
+| [AFFiNE](https://github.com/toeverything/AFFiNE) | Application | Documents, notes and visual knowledge workspace |
+| [Ghost Downloader 3](https://github.com/XiaoYouChR/Ghost-Downloader-3) | Application | Desktop download management |
+
+### 🎬 Media & Video
+
+| Project | Type | Purpose |
+|---|---|---|
+| [AutoClip](https://github.com/zhouxiaoka/autoclip) | Application | AI-assisted long-to-short video clipping |
+
+### Collection breakdown
+
+| Type | Count |
+|---|---:|
+| Agent skills, plugins and playbooks | 7 |
+| Developer tools, frameworks and services | 6 |
+| Applications | 3 |
+| **Total** | **16** |
+
+These labels are broad discovery categories. They do not mean every project is a standalone application or that every project is already integrated into a common runtime.
+
+## 🧩 How It Works
+
+CHEEKU INFINITY keeps its own CLI and catalogue separate from the upstream software.
 
 ~~~mermaid
 flowchart TD
-    U["You"] --> CLI["CHEEKU INFINITY CLI"]
-    CLI --> CAT["16-project catalogue"]
-    CLI --> GIT["Git source manager"]
-    GIT --> SRC["Local sources directory"]
-    SRC --> A["AI skills and plugins"]
-    SRC --> T["Developer tools and services"]
-    SRC --> AP["Applications"]
+    USER["You"] --> CLI["CHEEKU INFINITY CLI"]
+    CLI --> CAT["Project Catalogue"]
+    CLI --> GIT["Git Source Manager"]
+    CAT --> INFO["Project details and setup notes"]
+    GIT --> LOCAL["Local sources/ directory"]
+    LOCAL --> SKILLS["Agent Skills & Plugins"]
+    LOCAL --> TOOLS["Developer Tools & Services"]
+    LOCAL --> APPS["Applications"]
 ~~~
 
-When you request a project, CHEEKU INFINITY fetches it from its original GitHub repository. Each project keeps its own source code, Git history, setup instructions and license.
+When you request a project, the CLI clones it from its original GitHub repository into the local sources/project-id/ directory. Each upstream project keeps its own code, Git history, setup process and license.
 
-## Quick start
+## ⚡ Quick Start
 
 ### Requirements
 
-- Python **3.10 or newer**
-- [Git](https://git-scm.com/downloads)
-- Internet connection for downloading upstream projects
+- **Python 3.10 or newer**
+- **Git** installed and available on your PATH
+- An internet connection to fetch upstream repositories
 
 ### 1. Clone CHEEKU INFINITY
 
@@ -137,7 +172,7 @@ git clone https://github.com/MrCheeku/cheeku-infinity.git
 cd cheeku-infinity
 ~~~
 
-### 2. Install the CLI
+### 2. Install the command-line tool
 
 **Windows PowerShell**
 
@@ -151,77 +186,120 @@ py -m pip install .
 python3 -m pip install .
 ~~~
 
-For development and tests, install the optional development tools:
+For development, install the optional test dependency too:
 
 ~~~bash
 python -m pip install -e ".[dev]"
 ~~~
 
-### 3. Explore
+### 3. Verify the installation
 
 ~~~bash
 cheeku-infinity --version
+cheeku-infinity doctor
+~~~
+
+### 4. Explore the catalogue
+
+~~~bash
 cheeku-infinity list
 cheeku-infinity info superpowers
 ~~~
 
-### 4. Download a project
+### 5. Fetch a project
 
 ~~~bash
 cheeku-infinity clone superpowers
 ~~~
 
-The source is placed in the local sources/superpowers/ directory. Read that project's own README and follow its official installation instructions.
+The source is downloaded to the local sources/superpowers/ directory. Read that project's own README and follow its official installation steps to use it.
 
-To fetch the complete collection:
+To fetch all 16 projects:
 
 ~~~bash
 cheeku-infinity clone --all
 ~~~
 
-> Cloning all 16 projects can use significant disk space and bandwidth. The clone command downloads source code only; it does not execute third-party installation scripts.
+> **Note:** Cloning the full collection may use substantial bandwidth and disk space. The clone command downloads source code only. It does not run third-party installation scripts, install all dependencies or launch the downloaded software.
 
-## CLI command reference
+## ⌨️ Command Reference
 
-| Command | Purpose |
+| Command | Description |
 |---|---|
-| cheeku-infinity list | List all 16 projects |
-| cheeku-infinity list --kind skill | Show agent skills and plugins |
-| cheeku-infinity list --kind tool | Show developer tools |
-| cheeku-infinity list --kind application | Show applications |
-| cheeku-infinity list --domain research | Filter by domain |
-| cheeku-infinity list --json | Export catalogue data as JSON |
-| cheeku-infinity info PROJECT_ID | Inspect one project's details |
-| cheeku-infinity clone PROJECT_ID | Download one upstream project |
-| cheeku-infinity clone --all | Download all 16 projects |
-| cheeku-infinity update PROJECT_ID | Update one cloned project |
+| cheeku-infinity --version | Show the installed version |
+| cheeku-infinity --help | Show CLI help |
+| cheeku-infinity list | List all catalogue projects |
+| cheeku-infinity list --kind skill | Filter agent skills and plugins |
+| cheeku-infinity list --kind tool | Filter developer tools |
+| cheeku-infinity list --kind application | Filter applications |
+| cheeku-infinity list --domain research | Filter by domain text |
+| cheeku-infinity list --json | Print catalogue data as JSON |
+| cheeku-infinity info PROJECT_ID | Display project details and setup notes |
+| cheeku-infinity clone PROJECT_ID | Clone one upstream project |
+| cheeku-infinity clone --all | Clone all 16 upstream projects |
+| cheeku-infinity update PROJECT_ID | Fast-forward update one local checkout |
 | cheeku-infinity update --all | Update projects already cloned locally |
-| cheeku-infinity status | Show local clone and modification status |
-| cheeku-infinity audit | Check common license and notice filenames |
-| cheeku-infinity doctor | Check basic environment requirements |
+| cheeku-infinity status | Show clone state, branch and local changes |
+| cheeku-infinity status --json | Print local status as JSON |
+| cheeku-infinity audit | Check common license/notice filenames and local changes |
+| cheeku-infinity doctor | Check Python, Git and catalogue prerequisites |
 
-Use the command-line help for further options.
+For command-specific options, run the command followed by --help.
 
-## What works today?
+## 🧪 Examples
+
+### Browse only AI-related tools
+
+~~~bash
+cheeku-infinity list --domain "AI"
+~~~
+
+### Get details before downloading
+
+~~~bash
+cheeku-infinity info firecrawl
+~~~
+
+### Keep a local checkout up to date
+
+~~~bash
+cheeku-infinity update superpowers
+~~~
+
+Updates use a fast-forward-only Git pull. If the local branch has diverged, Git refuses the update instead of force-overwriting your work.
+
+### Check the collection
+
+~~~bash
+cheeku-infinity status
+cheeku-infinity audit
+~~~
+
+The audit command only checks for familiar license/notice filenames. It is not a legal review or a license compatibility analyser.
+
+## 📌 Current Scope
+
+CHEEKU INFINITY is being developed transparently. The current release is a working **catalogue and source manager**, not yet an integrated AI operating environment.
 
 | Capability | Status |
 |---|---|
-| Browse and filter the 16-project catalogue | Implemented |
-| Inspect project descriptions and source links | Implemented |
+| Browse and filter all 16 projects | Implemented |
+| Inspect project details and upstream links | Implemented |
 | Clone one or all upstream repositories | Implemented |
-| Update already-cloned repositories | Implemented |
-| View clone state and local modifications | Implemented |
-| Check common license and notice filenames | Implemented |
-| Check Python and Git prerequisites | Implemented |
-| Automatically install every upstream project | Not implemented |
-| Launch all applications through one command | Not implemented |
-| Unified AI runtime and multi-agent orchestration | Planned |
-| Integrated dashboard | Planned |
+| Fast-forward update local checkouts | Implemented |
+| View local clone and modification status | Implemented |
+| Check common license/notice filenames | Implemented |
+| Check basic local prerequisites | Implemented |
+| Automatic installation recipes for all upstreams | Planned |
+| One-command launch of all applications | Planned |
+| AI-agent adapters and integrations | Planned |
+| Multi-agent orchestration | Planned |
+| Unified dashboard | Planned |
 | Cross-project automated workflows | Planned |
 
-**Transparency matters:** This release is a working source manager and curated collection, not a claim that 16 separate software projects have already been merged into one application.
+A project being listed or cloned does not mean that it is installed, configured, launched or integrated.
 
-## Project structure
+## 📁 Project Structure
 
 ~~~text
 cheeku-infinity/
@@ -237,6 +315,10 @@ cheeku-infinity/
 │   ├── PROJECT-TYPES.md
 │   └── SECURITY-GUIDE.md
 ├── tests/
+│   ├── test_catalog.py
+│   └── test_cli.py
+├── assets/
+│   └── cheeku-infinity-banner.svg
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
 │   └── workflows/
@@ -250,42 +332,86 @@ cheeku-infinity/
 └── README.md
 ~~~
 
-## Roadmap
+The sources/ directory is created locally when you clone upstream projects and is intentionally excluded from this repository's Git history.
+
+## 🧑‍💻 Development
+
+Create and activate a virtual environment:
+
+~~~bash
+python -m venv .venv
+~~~
+
+**Windows PowerShell**
+
+~~~powershell
+.venv\Scripts\Activate.ps1
+~~~
+
+**Linux / macOS**
+
+~~~bash
+source .venv/bin/activate
+~~~
+
+Install the project and development dependencies:
+
+~~~bash
+python -m pip install -e ".[dev]"
+~~~
+
+Run the test suite:
+
+~~~bash
+python -m pytest -q
+~~~
+
+The GitHub Actions workflow checks Python 3.10, 3.11, 3.12 and 3.13.
+
+## 🗺️ Roadmap
 
 - [x] **v0.1** — Initial repository bootstrap.
-- [x] **v0.2** — Project catalogue, CLI, source cloning, updates, status, audit, docs and CI.
-- [ ] **v0.3** — Verified installation recipes and dependency preflight checks.
+- [x] **v0.2** — Catalogue, CLI, source cloning, updates, status, audit, documentation and CI.
+- [ ] **v0.3** — Verified setup recipes and dependency preflight checks.
 - [ ] **v0.4** — Optional adapters for compatible AI-agent environments.
-- [ ] **v0.5** — Tested, permission-controlled workflows connecting selected tools.
-- [ ] **v1.0** — Mature integrations, with a dashboard considered after the workflows are reliable.
+- [ ] **v0.5** — Tested and permission-controlled workflows connecting selected tools.
+- [ ] **v1.0** — Mature integration experience; consider a dashboard after workflows are reliable.
 
-Track development through [GitHub Issues](https://github.com/MrCheeku/cheeku-infinity/issues).
+Ideas and improvements can be proposed through [GitHub Issues](https://github.com/MrCheeku/cheeku-infinity/issues).
 
-## License & third-party ownership
+## 📜 License & Third-Party Projects
 
-CHEEKU INFINITY's original catalogue, CLI code and documentation are licensed under the [MIT License](LICENSE), unless a file says otherwise.
+The original CHEEKU INFINITY catalogue, CLI code and documentation are licensed under the [MIT License](LICENSE), unless a file states otherwise.
 
-The 16 referenced projects are **not relicensed by this repository**. They remain the property of their respective maintainers and retain their own licenses, notices, dependencies, assets and trademarks. Always review the current upstream license before modifying, bundling, redistributing or using a project commercially.
+The 16 referenced upstream projects are **not relicensed by this repository**. Their code, names, logos, assets, dependencies and trademarks remain subject to their respective owners' terms. Before modifying, bundling, redistributing or using an upstream project commercially:
+
+1. Read its current license and notices.
+2. Check the licenses of bundled dependencies, models, datasets and assets.
+3. Preserve all required copyright and attribution notices.
+4. Check trademark and branding restrictions separately.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). CHEEKU INFINITY is an independent collection and is not affiliated with or endorsed by the upstream projects.
 
-## Security
+## 🔐 Security
 
 - Only test systems you own or are explicitly authorized to assess.
-- Review third-party code and installation scripts before executing them.
+- Review third-party source code and installation scripts before executing them.
 - Use isolated environments and least-privilege accounts.
-- Never commit API keys, passwords, tokens or private data.
+- Never commit passwords, API keys, tokens or private data.
 - Treat downloaded source and AI-generated output as untrusted until reviewed.
 
 Read [SECURITY.md](SECURITY.md) and the [Security Guide](docs/SECURITY-GUIDE.md).
 
-## Contributing
+## 🤝 Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md), preserve upstream attribution and license requirements, and include tests for code changes.
+Contributions are welcome!
 
-## Maintainer
+1. Read [CONTRIBUTING.md](CONTRIBUTING.md).
+2. Open an issue before making large changes.
+3. Keep tests and documentation up to date.
+4. Preserve upstream attribution and license boundaries.
 
-**Mr.Cheeku** · [GitHub Profile](https://github.com/MrCheeku)
+Please follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ---
 
@@ -295,6 +421,6 @@ Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md), prese
 
 **Beyond Tools. Beyond Limits.**
 
-*Engineered by Mr.Cheeku*
+*Engineered by [Mr.Cheeku](https://github.com/MrCheeku)*
 
 </div>
