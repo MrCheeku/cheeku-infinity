@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">CHEEKU INFINITY</title>
+  <desc id="desc">A futuristic navy and blue banner featuring an infinity symbol and the Mr.Cheeku brand.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071326"/>
+      <stop offset=".55" stop-color="#0A1D38"/>
+      <stop offset="1" stop-color="#10102C"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67E8F9"/>
+      <stop offset=".48" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#60A5FA" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#2563EB" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="520" rx="34" fill="url(#bg)"/>
+  <circle cx="580" cy="265" r="290" fill="url(#glow)"/>
+  <circle cx="1370" cy="110" r="260" fill="url(#glow)" opacity=".6"/>
+  <g fill="none" stroke="#7DD3FC" stroke-opacity=".12">
+    <circle cx="580" cy="260" r="218"/>
+    <circle cx="580" cy="260" r="250"/>
+    <path d="M70 410H1530M70 100H1530" stroke="url(#line)"/>
+    <path d="M1050 80V440M1490 80V440" stroke-opacity=".08"/>
+  </g>
+  <g fill="#BAE6FD" opacity=".7">
+    <circle cx="160" cy="135" r="2"/><circle cx="250" cy="390" r="2"/>
+    <circle cx="920" cy="105" r="2.5"/><circle cx="1020" cy="370" r="2"/>
+    <circle cx="1450" cy="335" r="2.5"/><circle cx="1320" cy="420" r="1.7"/>
+    <circle cx="760" cy="445" r="1.8"/><circle cx="430" cy="65" r="1.7"/>
+  </g>
+  <path d="M215 260 C315 110 445 110 580 260 C715 410 845 410 945 260 C845 110 715 110 580 260 C445 410 315 410 215 260"
+        fill="none" stroke="url(#neon)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="580" cy="260" r="8" fill="#E0F2FE"/>
+  <path d="M1010 150H1460" stroke="url(#line)" stroke-width="2"/>
+  <text x="1010" y="222" fill="#E0F2FE" font-family="Arial, Helvetica, sans-serif" font-size="63" font-weight="800" letter-spacing="2">CHEEKU</text>
+  <text x="1010" y="294" fill="url(#neon)" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="800" letter-spacing="4">INFINITY</text>
+  <text x="1014" y="350" fill="#B7C9E3" font-family="Arial, Helvetica, sans-serif" font-size="23" letter-spacing="3">BEYOND TOOLS. BEYOND LIMITS.</text>
+  <path d="M1010 388H1450" stroke="url(#line)" stroke-width="2"/>
+  <text x="1014" y="430" fill="#7F9BBF" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="4">ENGINEERED BY MR.CHEEKU</text>
+</svg>
