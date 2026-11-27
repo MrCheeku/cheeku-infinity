@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use CHEEKU INFINITY, cite this repository and the individual upstream projects you use."
+title: "CHEEKU INFINITY"
+authors:
+  - name: "Mr.Cheeku"
+version: 0.2.0
+date-released: 2026-11-27
+url: "https://github.com/MrCheeku/cheeku-infinity"
+license: MIT

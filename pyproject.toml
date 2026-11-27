@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cheeku-infinity"
+version = "0.2.0"
+description = "A curated source manager for AI skills, developer tools and open-source applications."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Mr.Cheeku" }]
+keywords = ["ai", "agent-skills", "developer-tools", "open-source", "toolkit"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development",
+  "Topic :: Utilities"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+cheeku-infinity = "cheeku_infinity.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/MrCheeku/cheeku-infinity"
+Repository = "https://github.com/MrCheeku/cheeku-infinity"
+Issues = "https://github.com/MrCheeku/cheeku-infinity/issues"
+
+[tool.setuptools.packages.find]
+include = ["cheeku_infinity*"]

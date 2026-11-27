@@ -1,0 +1,24 @@
+{
+  "name": "CHEEKU INFINITY",
+  "version": "0.2.0",
+  "maintainer": "Mr.Cheeku",
+  "repository": "https://github.com/MrCheeku/cheeku-infinity",
+  "projects": [
+    {"id":"claude-bughunter","name":"Claude-BugHunter","repository":"elementalsouls/Claude-BugHunter","url":"https://github.com/elementalsouls/Claude-BugHunter","branch":"main","kind":"skill","domain":"Cybersecurity"},
+    {"id":"superpowers","name":"Superpowers","repository":"obra/superpowers","url":"https://github.com/obra/superpowers","branch":"main","kind":"skill","domain":"Software Engineering"},
+    {"id":"cli-anything","name":"CLI-Anything","repository":"HKUDS/CLI-Anything","url":"https://github.com/HKUDS/CLI-Anything","branch":"main","kind":"tool","domain":"Developer Tools"},
+    {"id":"minimind","name":"MiniMind","repository":"jingyaogong/minimind","url":"https://github.com/jingyaogong/minimind","branch":"master","kind":"tool","domain":"AI & Machine Learning"},
+    {"id":"cursor-plugins","name":"Cursor Plugins","repository":"cursor/plugins","url":"https://github.com/cursor/plugins","branch":"main","kind":"skill","domain":"AI Coding Agents"},
+    {"id":"firecrawl","name":"Firecrawl","repository":"firecrawl/firecrawl","url":"https://github.com/firecrawl/firecrawl","branch":"main","kind":"tool","domain":"Research & Web Data"},
+    {"id":"nginx","name":"NGINX","repository":"nginx/nginx","url":"https://github.com/nginx/nginx","branch":"master","kind":"tool","domain":"Infrastructure & Networking"},
+    {"id":"openvino","name":"OpenVINO","repository":"openvinotoolkit/openvino","url":"https://github.com/openvinotoolkit/openvino","branch":"master","kind":"tool","domain":"AI & Machine Learning"},
+    {"id":"diagram-design","name":"Diagram Design","repository":"cathrynlavery/diagram-design","url":"https://github.com/cathrynlavery/diagram-design","branch":"main","kind":"skill","domain":"Design & Documentation"},
+    {"id":"last30days-skill","name":"Last30Days Skill","repository":"mvanhorn/last30days-skill","url":"https://github.com/mvanhorn/last30days-skill","branch":"main","kind":"skill","domain":"Research & Web Intelligence"},
+    {"id":"stitch-skills","name":"Stitch Skills","repository":"google-labs-code/stitch-skills","url":"https://github.com/google-labs-code/stitch-skills","branch":"main","kind":"skill","domain":"Design & Documentation"},
+    {"id":"app-store-compliance","name":"App Store Compliance","repository":"mjmirza/app-store-compliance","url":"https://github.com/mjmirza/app-store-compliance","branch":"main","kind":"skill","domain":"App Security & Compliance"},
+    {"id":"opensre","name":"OpenSRE","repository":"Tracer-Cloud/opensre","url":"https://github.com/Tracer-Cloud/opensre","branch":"main","kind":"tool","domain":"DevOps & Reliability"},
+    {"id":"affine","name":"AFFiNE","repository":"toeverything/AFFiNE","url":"https://github.com/toeverything/AFFiNE","branch":"canary","kind":"application","domain":"Productivity"},
+    {"id":"ghost-downloader-3","name":"Ghost Downloader 3","repository":"XiaoYouChR/Ghost-Downloader-3","url":"https://github.com/XiaoYouChR/Ghost-Downloader-3","branch":"main","kind":"application","domain":"Productivity"},
+    {"id":"autoclip","name":"AutoClip","repository":"zhouxiaoka/autoclip","url":"https://github.com/zhouxiaoka/autoclip","branch":"main","kind":"application","domain":"Media & Video"}
+  ]
+}
