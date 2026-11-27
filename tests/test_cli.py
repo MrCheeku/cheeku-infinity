@@ -1,6 +1,7 @@
 import contextlib
 import io
 import json
+import runpy
 import tempfile
 import unittest
 from pathlib import Path
@@ -222,6 +223,74 @@ class CliTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("NO COMMON LICENSE", output.getvalue())
         self.assertIn("Local modifications detected", output.getvalue())
+
+    def test_clone_single_project_success(self):
+        with tempfile.TemporaryDirectory() as folder:
+            with (
+                patch("cheeku_infinity.cli.shutil.which", return_value="/usr/bin/git"),
+                patch("cheeku_infinity.cli.cmd_clone_one", return_value=0) as mocked,
+            ):
+                code, output, _ = self.run_cli([
+                    "clone", "superpowers", "--destination", folder
+                ])
+        self.assertEqual(code, 0)
+        self.assertIn("Done. Review each upstream README", output)
+        mocked.assert_called_once()
+
+    def test_update_rejects_mixed_project_and_all_options(self):
+        with patch("cheeku_infinity.cli.shutil.which", return_value="/usr/bin/git"):
+            code, _, error = self.run_cli(["update", "superpowers", "--all"])
+        self.assertEqual(code, 2)
+        self.assertIn("either a project ID or --all", error)
+
+    def test_status_human_readable_output_for_clean_and_dirty_repositories(self):
+        states = [
+            {
+                "id": project["id"],
+                "cloned": False,
+                "dirty": None,
+                "branch": None,
+            }
+            for project in PROJECTS
+        ]
+        states[0] = {
+            "id": PROJECTS[0]["id"],
+            "cloned": False,
+            "dirty": None,
+            "branch": None,
+        }
+        states[1] = {
+            "id": PROJECTS[1]["id"],
+            "cloned": True,
+            "dirty": False,
+            "branch": "main",
+        }
+        states[2] = {
+            "id": PROJECTS[2]["id"],
+            "cloned": True,
+            "dirty": True,
+            "branch": None,
+        }
+        with patch(
+            "cheeku_infinity.cli.local_project_state", side_effect=states
+        ):
+            code, output, _ = self.run_cli(["status"])
+        self.assertEqual(code, 0)
+        self.assertIn("[--]", output)
+        self.assertIn("[OK]", output)
+        self.assertIn("[DIRTY]", output)
+        self.assertIn("branch=unknown", output)
+        self.assertIn("2/16 projects cloned.", output)
+
+    def test_module_entrypoint_exits_after_version_output(self):
+        with (
+            patch("sys.argv", ["cheeku-infinity", "--version"]),
+            contextlib.redirect_stdout(io.StringIO()) as output,
+        ):
+            with self.assertRaises(SystemExit) as error:
+                runpy.run_module("cheeku_infinity.cli", run_name="__main__")
+        self.assertEqual(error.exception.code, 0)
+        self.assertIn("CHEEKU INFINITY", output.getvalue())
 
     def test_doctor_reports_current_environment(self):
         with patch("cheeku_infinity.cli.shutil.which", return_value="/usr/bin/git"):
