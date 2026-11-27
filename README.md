@@ -15,6 +15,10 @@
 
 **Discover · Fetch · Inspect · Update**
 
+[![Website](https://img.shields.io/badge/Website-TechWithCheeku.app-2563EB?logo=googlechrome&logoColor=white)](https://techwithcheeku.app)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/c9Ce54dw96)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Vb9OpwgD8SDvISwrn73Y)
+
 [Quick Start](#-quick-start) · [Collection](#-the-collection) · [Commands](#-command-reference) · [Roadmap](#-roadmap) · [Contributing](#-contributing)
 
 **Engineered by [Mr.Cheeku](https://github.com/MrCheeku)**
@@ -401,6 +405,26 @@ See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). CHEEKU INFINITY is an inde
 - Treat downloaded source and AI-generated output as untrusted until reviewed.
 
 Read [SECURITY.md](SECURITY.md) and the [Security Guide](docs/SECURITY-GUIDE.md).
+
+## 👤 Creator & Community
+
+<div align="center">
+
+<a href="https://github.com/MrCheeku">
+  <img src="https://avatars.githubusercontent.com/u/235286067?v=4" alt="Mr.Cheeku — creator and maintainer of CHEEKU INFINITY" width="140" />
+</a>
+
+### Mr.Cheeku
+
+**Creator & Maintainer · CHEEKU INFINITY**
+
+[GitHub Profile](https://github.com/MrCheeku) · [Personal Website](https://techwithcheeku.app)
+
+[![Website](https://img.shields.io/badge/Visit- TechWithCheeku.app-2563EB?logo=googlechrome&logoColor=white)](https://techwithcheeku.app)
+[![Discord](https://img.shields.io/badge/Join-Discord%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/c9Ce54dw96)
+[![WhatsApp](https://img.shields.io/badge/Follow-WhatsApp%20Channel-25D366?logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Vb9OpwgD8SDvISwrn73Y)
+
+</div>
 
 ## 🤝 Contributing
 
