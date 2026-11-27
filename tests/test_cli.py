@@ -56,6 +56,14 @@ class CliTests(unittest.TestCase):
         self.assertEqual(len(statuses), 16)
         self.assertTrue(all(not row["cloned"] for row in statuses))
 
+    def test_update_all_skips_uncloned_projects(self):
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as folder:
+            with patch("cheeku_infinity.cli.shutil.which", return_value="/usr/bin/git"):
+                code, output, _ = self.run_cli(["update", "--all", "--destination", folder])
+        self.assertEqual(code, 0)
+        self.assertIn("No cloned repositories to update", output)
+
     def test_audit_on_empty_destination(self):
         with tempfile.TemporaryDirectory() as folder:
             code, output, _ = self.run_cli(["audit", "--destination", folder])
