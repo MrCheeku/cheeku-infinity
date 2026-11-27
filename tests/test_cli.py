@@ -188,7 +188,7 @@ class CliTests(unittest.TestCase):
             (Path(folder) / project["id"] / ".git").mkdir(parents=True)
             results = [
                 SimpleNamespace(returncode=1, stdout=""),
-                SimpleNamespace(returncode=1, stdout=""),
+                SimpleNamespace(returncode=1, stdout=" M README.md"),
             ]
             with patch("cheeku_infinity.cli.subprocess.run", side_effect=results):
                 state = local_project_state(project, Path(folder))
@@ -224,10 +224,21 @@ class CliTests(unittest.TestCase):
         self.assertIn("Local modifications detected", output.getvalue())
 
     def test_doctor_reports_current_environment(self):
-        code, output, _ = self.run_cli(["doctor"])
-        self.assertIn(code, (0, 1))
+        with patch("cheeku_infinity.cli.shutil.which", return_value="/usr/bin/git"):
+            code, output, _ = self.run_cli(["doctor"])
+        self.assertEqual(code, 0)
         self.assertIn("CHEEKU INFINITY doctor", output)
         self.assertIn(f"{len(PROJECTS)} entries", output)
+
+    def test_doctor_returns_failure_when_prerequisites_are_missing(self):
+        with (
+            patch("cheeku_infinity.cli.sys.version_info", (3, 9, 0)),
+            patch("cheeku_infinity.cli.shutil.which", return_value=None),
+            patch("cheeku_infinity.cli.PROJECTS", []),
+        ):
+            code, output, _ = self.run_cli(["doctor"])
+        self.assertEqual(code, 1)
+        self.assertIn("[MISSING]", output)
 
 
 if __name__ == "__main__":
