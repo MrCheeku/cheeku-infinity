@@ -188,7 +188,7 @@ class CliTests(unittest.TestCase):
             (Path(folder) / project["id"] / ".git").mkdir(parents=True)
             results = [
                 SimpleNamespace(returncode=1, stdout=""),
-                SimpleNamespace(returncode=1, stdout=" M README.md"),
+                SimpleNamespace(returncode=0, stdout=" M README.md"),
             ]
             with patch("cheeku_infinity.cli.subprocess.run", side_effect=results):
                 state = local_project_state(project, Path(folder))
