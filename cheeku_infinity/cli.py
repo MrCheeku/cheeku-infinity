@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 from . import __version__
 from .catalog import PROJECTS, PROJECT_BY_ID
@@ -118,6 +119,57 @@ def cmd_clone(args: argparse.Namespace) -> int:
     return 0
 
 
+def _repository_from_remote(remote_url: str) -> str | None:
+    """Return owner/repository for a public GitHub remote URL."""
+    value = remote_url.strip()
+    if value.startswith("git@github.com:"):
+        path = value.split(":", 1)[1]
+    else:
+        parsed = urlparse(value)
+        if parsed.hostname != "github.com":
+            return None
+        path = parsed.path.lstrip("/")
+    return path.removesuffix(".git").strip("/").casefold()
+
+
+def validate_update_checkout(project: dict, target: Path) -> str | None:
+    """Refuse updates when the checkout is not the expected clean upstream."""
+    try:
+        remote = subprocess.run(
+            ["git", "remote", "get-url", "origin"], cwd=target,
+            capture_output=True, text=True, check=False
+        )
+        if remote.returncode != 0:
+            return "the origin remote could not be read"
+        if _repository_from_remote(remote.stdout) != project["repository"].casefold():
+            return "the origin remote does not match the catalogue repository"
+
+        branch = subprocess.run(
+            ["git", "branch", "--show-current"], cwd=target,
+            capture_output=True, text=True, check=False
+        )
+        if branch.returncode != 0:
+            return "the current branch could not be determined"
+        if branch.stdout.strip() != project["branch"]:
+            return (
+                f"the checkout is on branch {branch.stdout.strip() or '<detached>'!r}; "
+                f"expected {project['branch']!r}"
+            )
+
+        status = subprocess.run(
+            ["git", "status", "--porcelain"], cwd=target,
+            capture_output=True, text=True, check=False
+        )
+        if status.returncode != 0:
+            return "the working-tree status could not be determined"
+        if status.stdout.strip():
+            return "local changes are present; commit or stash them before updating"
+    except FileNotFoundError:
+        return "Git is unavailable"
+
+    return None
+
+
 def cmd_update(args: argparse.Namespace) -> int:
     if not shutil.which("git"):
         print("Git is required. Install Git first.", file=sys.stderr)
@@ -150,8 +202,19 @@ def cmd_update(args: argparse.Namespace) -> int:
             print(f"Not cloned: {project['id']} ({target})", file=sys.stderr)
             failures.append(project["id"])
             continue
+        problem = validate_update_checkout(project, target)
+        if problem:
+            print(
+                f"Refusing update for {project['id']}: {problem}.",
+                file=sys.stderr
+            )
+            failures.append(project["id"])
+            continue
         print(f"Updating {project['id']} (fast-forward only)")
-        if run(["git", "pull", "--ff-only"], cwd=target) != 0:
+        if run(
+            ["git", "pull", "--ff-only", "origin", project["branch"]],
+            cwd=target
+        ) != 0:
             failures.append(project["id"])
     if failures:
         print("Update failed or skipped: " + ", ".join(failures), file=sys.stderr)
