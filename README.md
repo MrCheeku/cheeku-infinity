@@ -10,7 +10,7 @@
 
 **Created by [Mr.Cheeku](https://github.com/MrCheeku)**
 
-**A curated collection of AI skills, developer tools, infrastructure and creative applications.**
+**An open-source catalogue and Python CLI for discovering, cloning, updating, and auditing 16 curated projects across AI, software engineering, cybersecurity, design, DevOps, productivity, and media.**
 
 [![CI](https://img.shields.io/github/actions/workflow/status/MrCheeku/cheeku-infinity/ci.yml?branch=main&label=CI&logo=githubactions&logoColor=white)](https://github.com/MrCheeku/cheeku-infinity/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -21,7 +21,7 @@
 
 **Discover · Fetch · Inspect · Update**
 
-[![Website](https://img.shields.io/badge/Website-TechWithCheeku-2563EB?logo=googlechrome&logoColor=white)](https://techwithcheeku.lovable.app)
+[![Website](https://img.shields.io/badge/Website-TechWithCheeku-2563EB?logo=googlechrome&logoColor=white)](https://TechWithCheeku.app)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/c9Ce54dw96)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Vb9OpwgD8SDvISwrn73Y)
 
@@ -35,7 +35,7 @@
 
 ## ✨ What is CHEEKU INFINITY?
 
-**CHEEKU INFINITY** is an open-source collection and command-line source manager that brings 16 independently maintained projects into one organized catalogue.
+**CHEEKU INFINITY** is an open-source project collection and Python command-line source manager that brings 16 independently maintained repositories into one organized catalogue. It gives developers a consistent way to discover projects, inspect their purpose and upstream source, clone selected repositories, safely update local checkouts, review local changes, and check for common license and notice files—all from one CLI.
 
 It covers AI and machine learning, coding-agent skills, software engineering, cybersecurity, web research, UI/UX design, DevOps, productivity and media creation.
 
