@@ -8,7 +8,7 @@
   <img src="https://avatars.githubusercontent.com/u/235286067?v=4" alt="Mr.Cheeku — creator of CHEEKU INFINITY" width="112" />
 </a>
 
-**Created by [Mr.Cheeku](https://github.com/MrCheeku) · [TechWithCheeku.app](https://techwithcheeku.app)**
+**Created by [Mr.Cheeku](https://github.com/MrCheeku)**
 
 **A curated collection of AI skills, developer tools, infrastructure and creative applications.**
 
