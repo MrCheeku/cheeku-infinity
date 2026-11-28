@@ -14,6 +14,7 @@ from cheeku_infinity.cli import (
     local_project_state,
     main,
     run,
+    validate_update_checkout,
 )
 
 
@@ -138,6 +139,7 @@ class CliTests(unittest.TestCase):
             with (
                 patch("cheeku_infinity.cli.shutil.which", return_value="/usr/bin/git"),
                 patch("cheeku_infinity.cli.run", return_value=0) as mocked_run,
+                patch("cheeku_infinity.cli.validate_update_checkout", return_value=None),
             ):
                 code, _, _ = self.run_cli(["update", "--all", "--destination", folder])
             self.assertEqual(code, 0)
@@ -148,6 +150,7 @@ class CliTests(unittest.TestCase):
             with (
                 patch("cheeku_infinity.cli.shutil.which", return_value="/usr/bin/git"),
                 patch("cheeku_infinity.cli.run", return_value=1),
+                patch("cheeku_infinity.cli.validate_update_checkout", return_value=None),
             ):
                 code, _, error = self.run_cli(["update", "--all", "--destination", folder])
             self.assertEqual(code, 1)
@@ -308,6 +311,56 @@ class CliTests(unittest.TestCase):
             code, output, _ = self.run_cli(["doctor"])
         self.assertEqual(code, 1)
         self.assertIn("[MISSING]", output)
+
+
+    def test_update_guard_accepts_expected_clean_https_checkout(self):
+        project = PROJECT_BY_ID["superpowers"]
+        results = [
+            SimpleNamespace(returncode=0, stdout="https://github.com/obra/superpowers.git\n"),
+            SimpleNamespace(returncode=0, stdout="main\n"),
+            SimpleNamespace(returncode=0, stdout=""),
+        ]
+        with patch("cheeku_infinity.cli.subprocess.run", side_effect=results):
+            self.assertIsNone(validate_update_checkout(project, Path("/tmp/superpowers")))
+
+    def test_update_guard_accepts_expected_clean_ssh_checkout(self):
+        project = PROJECT_BY_ID["superpowers"]
+        results = [
+            SimpleNamespace(returncode=0, stdout="git@github.com:obra/superpowers.git\n"),
+            SimpleNamespace(returncode=0, stdout="main\n"),
+            SimpleNamespace(returncode=0, stdout=""),
+        ]
+        with patch("cheeku_infinity.cli.subprocess.run", side_effect=results):
+            self.assertIsNone(validate_update_checkout(project, Path("/tmp/superpowers")))
+
+    def test_update_guard_rejects_unexpected_origin(self):
+        project = PROJECT_BY_ID["superpowers"]
+        results = [SimpleNamespace(returncode=0, stdout="https://github.com/someone/else.git\n")]
+        with patch("cheeku_infinity.cli.subprocess.run", side_effect=results):
+            message = validate_update_checkout(project, Path("/tmp/superpowers"))
+        self.assertIn("does not match", message)
+
+    def test_update_guard_rejects_wrong_branch(self):
+        project = PROJECT_BY_ID["superpowers"]
+        results = [
+            SimpleNamespace(returncode=0, stdout="https://github.com/obra/superpowers.git\n"),
+            SimpleNamespace(returncode=0, stdout="feature/local-work\n"),
+        ]
+        with patch("cheeku_infinity.cli.subprocess.run", side_effect=results):
+            message = validate_update_checkout(project, Path("/tmp/superpowers"))
+        self.assertIn("expected 'main'", message)
+
+    def test_update_guard_rejects_uncommitted_changes(self):
+        project = PROJECT_BY_ID["superpowers"]
+        results = [
+            SimpleNamespace(returncode=0, stdout="https://github.com/obra/superpowers.git\n"),
+            SimpleNamespace(returncode=0, stdout="main\n"),
+            SimpleNamespace(returncode=0, stdout=" M README.md\n"),
+        ]
+        with patch("cheeku_infinity.cli.subprocess.run", side_effect=results):
+            message = validate_update_checkout(project, Path("/tmp/superpowers"))
+        self.assertIn("local changes are present", message)
+
 
 
 if __name__ == "__main__":
