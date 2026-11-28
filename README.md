@@ -21,7 +21,7 @@
 
 **Discover · Fetch · Inspect · Update**
 
-[![Website](https://img.shields.io/badge/Website-TechWithCheeku-2563EB?logo=googlechrome&logoColor=white)](https://TechWithCheeku.app)
+[![Website](https://img.shields.io/badge/Website-TechWithCheeku-2563EB?logo=googlechrome&logoColor=white)](https://techwithcheeku.lovable.app)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/c9Ce54dw96)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp-Channel-25D366?logo=whatsapp&logoColor=white)](https://whatsapp.com/channel/0029Vb9OpwgD8SDvISwrn73Y)
 
